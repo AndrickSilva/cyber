@@ -1,1 +1,10 @@
 @import "tailwindcss";
+
+
+@theme {
+    --font-exo:  "Exo 2", "sans-serif";
+    --font-inter:  "Inter", "sans-serif";
+
+    --color-primary: #9f0712;
+    --color-secondary: #fef0e8;
+}
