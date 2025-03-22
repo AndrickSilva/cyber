@@ -1,11 +1,15 @@
-import { Globe } from "lucide-react";
-// import secure from "../assets/secure.svg";
-import { Smartphone } from "lucide-react";
-import { Cable } from "lucide-react";
-import { Cloud } from "lucide-react";
-import { Server } from "lucide-react";
-import { Mail } from "lucide-react";
-import { ShieldCheck } from "lucide-react";
+import { Globe, Smartphone, Cable, Cloud, Server, Mail, ShieldCheck } from "lucide-react";
+
+const serviceData = [
+  { id: 1, icon: Globe, title: "Web", subtitle: "VAPT" },
+  { id: 2, icon: Smartphone, title: "Mobile", subtitle: "VAPT" },
+  { id: 3, icon: Cable, title: "API", subtitle: "VAPT" },
+  { id: 4, icon: Cloud, title: "Cloud", subtitle: "VAPT" },
+  { id: 5, icon: Server, title: "Server", subtitle: "VAPT" },
+  { id: 6, icon: Mail, title: "Phishing Email", subtitle: "Campaigns", isHorizontal: true },
+  { id: 7, icon: ShieldCheck, title: "Security Config", subtitle: "Review", isHorizontal: true },
+];
+
 const Services = () => {
   return (
     <div className="">
@@ -15,41 +19,21 @@ const Services = () => {
         </h1>
       </div>
       <section className="min-h-[70vh] mt-28 flex flex-col gap-4 relative overflow-hidden items-center">
-        {/* <img src={secure} alt="secure" className="h-[80vh] absolute -right-1 -z-1" /> */}
-        <div className="flex gap-4">
-        <div className="flex flex-col items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <Globe size={60} strokeWidth={1} className="self-end" />
-          <p className="font-exo font-bold text-xl self-start"><span className="text-xl text-tertiary">Web </span>VAPT</p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <Smartphone size={60} strokeWidth={1} className="self-end" />
-          <p className="font-exo font-bold text-xl self-start"><span className="text-xl text-tertiary">Mobile</span> VAPT</p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <Cable size={60} strokeWidth={1} className="self-end" />
-          <p className="font-exo font-bold text-xl self-start"><span className="text-xl text-tertiary">API</span> VAPT</p>
-        </div>
-        </div>
-
-        <div className="flex gap-4">
-        <div className="flex flex-col items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <Cloud size={60} strokeWidth={1} className="self-end" />
-          <p className="font-exo font-bold text-xl self-start"><span className="text-xl text-tertiary">Cloud </span>VAPT</p>
-        </div>
-        <div className="flex flex-col items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <Server size={60} strokeWidth={1} className="self-end" />
-          <p className="font-exo font-bold text-xl self-start"><span className="text-xl text-tertiary">Server</span> VAPT</p>
-        </div>
-        <div className="flex items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <p className="font-exo font-bold text-xl self-end"><span className="text-xl text-tertiary">Phishing Email</span> Campaigns</p>
-          <Mail size={60} strokeWidth={1} className="self-start h-[37px]" />
-        </div>
-        </div>
-        <div className="flex gap-4">
-        <div className="flex items-center justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300 ">
-          <p className="font-exo font-bold text-xl self-end"><span className="text-xl text-tertiary">Security Config </span> Review</p>
-          <ShieldCheck size={60} strokeWidth={1} className="self-start h-[37px]" />
-        </div>
+        <div className="grid grid-cols-3 gap-4">
+          {serviceData.map(({ id, icon: Icon, title, subtitle, isHorizontal }) => (
+            <div
+              key={id}
+              className={`flex ${
+                isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"
+              } justify-center gap-4 bg-white shadow-sm border border-slate-200 w-60 h-30 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
+            >
+              {Icon && <Icon size={60} strokeWidth={1} className={`${isHorizontal ? "self-start h-[37px]" : "self-end"}`} />}
+              <p className={`font-exo font-bold text-xl ${isHorizontal ? "self-end" : "self-start"}`}>
+                <span className="text-xl text-tertiary">{title} </span>
+                {subtitle}
+              </p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

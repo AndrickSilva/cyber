@@ -24,7 +24,7 @@ const Contact = () => {
     <div className="min-h-[100vh] flex flex-col justify-center items-center">
       <div className="relative">
         <h1 className="mt-10 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[25%] before:absolute before:bg-primary before:-bottom-6">
-          Contact Us<span className="text-6xl text-primary">.</span>
+          Contact Us<span className="text-6xl text-primary"> .</span>
         </h1>
       </div>
 
