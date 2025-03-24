@@ -3,9 +3,9 @@ import about from '../assets/about.jpg';
 
 const About = () => {
   return (
-    <div className="min-h-[100vh] flex flex-col items-center">
+    <div id="about" className="min-h-[100vh] flex flex-col items-center">
       <div className="relative">
-        <h1 className="mt-10 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[19%] before:absolute before:bg-primary before:-bottom-6">
+        <h1 className="pt-16 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[19%] before:absolute before:bg-primary before:-bottom-6">
           About Us<span className="text-6xl text-primary"> .</span>
         </h1>
       </div>

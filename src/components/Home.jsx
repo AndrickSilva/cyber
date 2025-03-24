@@ -3,7 +3,7 @@ import security from "../assets/security-not-css.svg";
 import { MoveRight } from "lucide-react";
 const Home = () => {
   return (
-    <div className="min-h-[90vh] flex items-center justify-between gap-4 bg-secondary font-inter px-2">
+    <div id="home" className="min-h-[100vh] flex items-center justify-between gap-4 bg-secondary font-inter px-2">
       <img src={security} className="h-[480px] w-1/2"></img>
       <div className=" w-1/2">
         <div className="max-w-[580px]">

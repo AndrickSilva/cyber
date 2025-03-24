@@ -103,7 +103,7 @@ const Services = () => {
     if (!expandedService) return null;
 
     return (
-      <div className="min-h-[80vh] w-full bg-primary text-white flex items-center justify-center p-10 mt-2.5">
+      <div className="min-h-[100vh] w-full bg-primary text-white flex items-center justify-center p-10 mt-2.5">
         <div className="flex flex-col justify-center items-center">
           <div className="flex gap-4 justify-center w-3/4">
           <div className="">
@@ -118,9 +118,9 @@ const Services = () => {
   };
 
   return (
-    <div className="">
+    <div id="service">
       <div className="relative">
-        <h1 className="mt-10 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[46%] before:absolute before:bg-primary before:-bottom-6">
+        <h1 className="pt-16 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[46%] before:absolute before:bg-primary before:-bottom-6">
           Our Services<span className="text-6xl text-primary"> .</span>
         </h1>
       </div>
@@ -137,11 +137,11 @@ const Services = () => {
                      shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
                 >
                   {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
-                  <p className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
+                  <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
                     <span className="text-xl text-tertiary">{title} </span>
                     <p>{subtitle}</p>
                   {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
-                  </p>
+                  </div>
                   <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
               </div>
             ))}
@@ -161,11 +161,11 @@ const Services = () => {
                    shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
               >
                 {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
-                <p className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
+                <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
                   <span className="text-xl text-tertiary">{title} </span>
                   <p>{subtitle}</p>
                 {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
-                </p>
+                </div>
                 <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
             </div>
             ))}
@@ -185,11 +185,11 @@ const Services = () => {
                    shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
               >
                 {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
-                <p className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
+                <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
                   <span className="text-xl text-tertiary">{title} </span>
                   <p>{subtitle}</p>
                 {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
-                </p>
+                </div>
                 <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
             </div>
             ))}

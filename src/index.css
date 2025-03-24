@@ -9,7 +9,9 @@
     --color-secondary: #fef0e8;
     --color-tertiary: #f71222;
 }
-
+* {
+    scroll-behavior: smooth;
+}
 /* Spinner */
 .loader {
   width: 8px;
