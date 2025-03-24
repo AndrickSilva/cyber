@@ -10,7 +10,7 @@ const serviceData = [
       subtitle: "VAPT", 
       details: {
         title: "Web Application Security Testing",
-        img: "/public/web.jpg",
+        img: "/web.jpg",
         description: "Comprehensive security testing for web applications to identify vulnerabilities and ensure robust protection. This includes testing for common vulnerabilities such as SQL injection, cross-site scripting (XSS), and authentication flaws, ensuring your web application is secure against potential threats. Our team uses advanced tools and methodologies to simulate real-world attacks, providing actionable insights to strengthen your application's defenses."
       }
     },
@@ -21,7 +21,7 @@ const serviceData = [
       subtitle: "VAPT", 
       details: {
         title: "Mobile Application Security Testing",
-        img: "/public/web.jpg",
+        img: "/web.jpg",
         description: "Thorough security analysis for mobile applications to safeguard user data and prevent breaches. Our testing covers platform-specific vulnerabilities, insecure data storage, and improper session handling to ensure your mobile app is resilient against attacks. We also provide recommendations to enhance app security and protect sensitive user information from unauthorized access."
       }
     },
@@ -32,7 +32,7 @@ const serviceData = [
       subtitle: "VAPT", 
       details: {
         title: "API Security Testing",
-        img: "/public/web.jpg",
+        img: "/web.jpg",
         description: "Ensure secure communication and data exchange by identifying vulnerabilities in APIs. Our testing process includes analyzing authentication mechanisms, data validation, and error handling to prevent unauthorized access and data breaches. We help you build secure APIs that comply with industry standards and best practices."
       }
     },
@@ -45,7 +45,7 @@ const serviceData = [
       subtitle: "VAPT", 
       details: {
         title: "Cloud Security Assessment",
-        img: "/public/web.jpg",
+        img: "/web.jpg",
         description: "Evaluate cloud infrastructure for security risks and implement best practices for protection. Our assessment includes reviewing access controls, encryption mechanisms, and compliance with regulatory requirements. We help you secure your cloud environment against potential threats and ensure business continuity."
       }
     },
@@ -56,7 +56,7 @@ const serviceData = [
       subtitle: "VAPT", 
       details: {
         title: "Server Security Testing",
-        img: "/public/web.jpg",
+        img: "/web.jpg",
         description: "Identify and mitigate vulnerabilities in server configurations and environments. Our experts analyze server settings, patch management, and network configurations to detect weaknesses. We provide detailed reports and actionable recommendations to enhance server security and prevent unauthorized access."
       }
     },
@@ -68,7 +68,7 @@ const serviceData = [
       isHorizontal: true, 
       details: {
         title: "Phishing Email Campaigns",
-        img: "/public/web.jpg",
+        img: "/web.jpg",
         description: "Simulate phishing attacks to educate and test the awareness of employees. Our campaigns are designed to mimic real-world phishing scenarios, helping organizations identify vulnerabilities in employee behavior. We also provide training and resources to improve awareness and reduce the risk of successful phishing attacks."
       }
     },
