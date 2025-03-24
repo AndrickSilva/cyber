@@ -17,7 +17,7 @@ const About = () => {
             className="w-96 h-72 object-cover rounded-lg shadow-lg"></img>
         </div>
         <div className="w-full md:w-1/2 flex flex-col items-center md:block">
-            <h2 className="text-2xl font-exo font-bold mb-3">Hi, we're Cyber.</h2>
+            <h2 className="text-2xl font-exo font-bold mb-3">Hi, We're Cyber.</h2>
             <p className='w-full md:max-w-md'>
               Since 2001, we've been a trusted cybersecurity partner for businesses
               across the globe. we're strategically positioned to support your needs, no matter your

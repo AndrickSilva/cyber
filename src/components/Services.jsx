@@ -103,17 +103,21 @@ const Services = () => {
     if (!expandedService) return null;
 
     return (
-      <div className="min-h-[100vh] w-full bg-primary text-white flex items-center justify-center p-10 mt-2.5">
-        <div className="flex flex-col justify-center items-center">
-          <div className="flex gap-4 justify-center w-3/4">
-          <div className="">
-            <h2 className="font-bold mb-6 font-exo text-3xl">{expandedService.details.title}</h2>
-              <p className="mt-2">{expandedService.details.description}</p>
-          </div>
-            <img src={expandedService.details.img} alt={expandedService.details.img} className="h-[350px] shadow-lg rounded-lg " />
-          </div>
-        </div>
-      </div>
+<div className="min-h-[70vh] w-full bg-primary text-white flex items-start justify-center p-10 mt-2.5">
+  <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 w-auto lg:w-3/4 grid-rows-[60px] place-items-center md:place-items-start">
+    {/* Text Section */}
+      <h2 className="font-bold mb-4 font-exo text-3xl">{expandedService.details.title}</h2>
+      <p className="mt-2 order-2 md:order-1">{expandedService.details.description}</p>
+    
+    {/* Image Section */}
+    <img 
+      src={expandedService.details.img} 
+      alt={expandedService.details.title} 
+      className="h-[350px] shadow-lg rounded-lg md:row-span-2"
+    />
+  </div>
+</div>
+
     );
   };
 
@@ -127,14 +131,13 @@ const Services = () => {
       <section className="min-h-[70vh] mt-28 flex flex-col gap-4">
         <div className="flex flex-col gap-4 items-center">
           <div className="flex justify-center flex-col w-full">
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
             {serviceData[0].map(({ id, icon: Icon, title, subtitle, isHorizontal }) => (
-                <div
-                  key={id}
-                  onClick={()=>{handleCardClick(id)}}
-                  className={`flex group justify-between relative ${expandedId === id ? "bg-slate-800 text-white": "bg-white"}
-                     ${ isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"} 
-                     shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
+                <div key={id} className="flex justify-center items-center flex-col">
+                <div onClick={()=>{handleCardClick(id)}} className={`flex group justify-between relative 
+                ${expandedId === id ? "bg-slate-800 text-white": "bg-white"} 
+                ${ isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"} 
+                shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
                 >
                   {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
                   <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
@@ -144,59 +147,64 @@ const Services = () => {
                   </div>
                   <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
               </div>
+            <div className="md:hidden">{expandedId===id? renderExpandedSection(0): null}</div>
+            </div>
             ))}
             </div>
-            {renderExpandedSection(0)}
+            <div className="hidden md:block">{renderExpandedSection(0)}</div>
           </div>
         </div>
         <div className="flex flex-col gap-4 items-center">
           <div className="flex justify-center flex-col w-full">
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
             {serviceData[1].map(({ id, icon: Icon, title, subtitle, isHorizontal }) => (
-                <div
-                key={id}
-                onClick={()=>{handleCardClick(id)}}
-                className={`flex group justify-between relative ${expandedId === id ? "bg-slate-800 text-white": "bg-white"}
-                   ${ isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"} 
-                   shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
-              >
-                {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
-                <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
-                  <span className="text-xl text-tertiary">{title} </span>
-                  <p>{subtitle}</p>
-                {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
-                </div>
-                <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
+                <div key={id} className="flex justify-center items-center flex-col">
+                <div onClick={()=>{handleCardClick(id)}} className={`flex group justify-between relative 
+                ${expandedId === id ? "bg-slate-800 text-white": "bg-white"} 
+                ${ isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"} 
+                shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
+                >
+                  {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
+                  <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
+                    <span className="text-xl text-tertiary">{title} </span>
+                    <p>{subtitle}</p>
+                  {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
+                  </div>
+                  <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
+              </div>
+            <div className="md:hidden">{expandedId===id? renderExpandedSection(1): null}</div>
             </div>
             ))}
             </div>
-            {renderExpandedSection(1)}
+            <div className="hidden md:block">{renderExpandedSection(1)}</div>
           </div>
         </div>
         <div className="flex flex-col gap-4 items-center">
           <div className="flex justify-center flex-col w-full">
-          <div className="flex flex-wrap gap-4 justify-center">
+          <div className="flex flex-col md:flex-row items-center gap-4 justify-center">
             {serviceData[2].map(({ id, icon: Icon, title, subtitle, isHorizontal }) => (
-                <div
-                key={id}
-                onClick={()=>{handleCardClick(id)}}
-                className={`flex group justify-between relative ${expandedId === id ? "bg-slate-800 text-white": "bg-white"}
-                   ${ isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"} 
-                   shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
-              >
-                {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
-                <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
-                  <span className="text-xl text-tertiary">{title} </span>
-                  <p>{subtitle}</p>
-                {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
-                </div>
-                <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
+                <div key={id} className="flex justify-center items-center flex-col">
+                <div onClick={()=>{handleCardClick(id)}} className={`flex group justify-between relative 
+                ${expandedId === id ? "bg-slate-800 text-white": "bg-white"} 
+                ${ isHorizontal ? "flex-row-reverse items-center" : "flex-col items-center"} 
+                shadow-sm border border-slate-200 w-60 h-36 rounded-lg p-4 text-black hover:bg-slate-800 hover:text-white cursor-pointer transition-all duration-300`}
+                >
+                  {Icon && <Icon size={50} strokeWidth={1} className={`group-hover:min-h-[50px] ${isHorizontal ? "self-start h-[50px]" : "self-end"}`} />}
+                  <div className={`font-exo font-bold text-xl leading-[0.8] ${isHorizontal ? "self-end" : "self-start"}`}>
+                    <span className="text-xl text-tertiary">{title} </span>
+                    <p>{subtitle}</p>
+                  {expandedId === id ? null : <p className="hidden group-hover:block text-gray-400 text-sm font-semibold">Click to learn more</p>}
+                  </div>
+                  <div className={`${expandedId === id ? "block": "hidden"} absolute w-4 h-4 rotate-45 bg-slate-800 -bottom-1 left-1/2`}></div>
+              </div>
+            <div className="md:hidden">{expandedId===id? renderExpandedSection(2): null}</div>
             </div>
             ))}
             </div>
-            {renderExpandedSection(2)}
+            <div className="hidden md:block">{renderExpandedSection(2)}</div>
           </div>
         </div>
+
       </section>
     </div>
   );
