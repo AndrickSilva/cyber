@@ -103,10 +103,10 @@ const Services = () => {
     if (!expandedService) return null;
 
     return (
-<div className="min-h-[70vh] w-full bg-primary text-white flex items-start justify-center p-10 mt-2.5">
+<div className="min-h-[70vh] w-full bg-primary text-white flex items-start justify-center p-[25px] sm:p-[50px] mt-2.5">
   <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 w-auto lg:w-3/4 grid-rows-[60px] place-items-center md:place-items-start">
     {/* Text Section */}
-      <h2 className="font-bold mb-4 font-exo text-3xl">{expandedService.details.title}</h2>
+      <h2 className="font-bold mb-4 font-exo text-3xl text-center md:text-left">{expandedService.details.title}</h2>
       <p className="mt-2 order-2 md:order-1">{expandedService.details.description}</p>
     
     {/* Image Section */}
