@@ -30,7 +30,7 @@ const Contact = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="mt-28 flex w-[450px] mx-auto flex-col gap-4"
+        className="mt-28 flex px-6 w-full sm:w-[450px] mx-auto flex-col gap-4"
       >
         <div className="flex flex-col gap-1">
           <label htmlFor="email" className="font-medium">Your email</label>

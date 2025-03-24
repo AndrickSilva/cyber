@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-<footer className="bg-white dark:bg-gray-900">
+<footer className="bg-gray-900">
     <div className="container flex flex-col items-center justify-between px-6 py-8 mx-auto lg:flex-row">
         <a href="#home">
             {/* <img className="w-auto h-7" src="https://merakiui.com/images/full-logo.svg" alt=""></img> */}

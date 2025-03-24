@@ -119,8 +119,8 @@ const Services = () => {
 
   return (
     <div id="service">
-      <div className="relative">
-        <h1 className="pt-16 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[46%] before:absolute before:bg-primary before:-bottom-6">
+      <div className=" flex justify-center">
+        <h1 className="relative w-fit pt-16 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[30%] before:absolute before:bg-primary before:-bottom-6">
           Our Services<span className="text-6xl text-primary"> .</span>
         </h1>
       </div>
