@@ -22,7 +22,7 @@ const Footer = () => {
                 About
             </a>
             <a href="#contact" className="text-sm transition-colors duration-300 text-gray-200 hover:text-tertiary">
-                Contact Us
+                Contact
             </a>
         </div>
         <p className="mt-6 text-sm text-gray-500 lg:mt-0 dark:text-gray-400">© Copyright 2001 Cyber.</p>

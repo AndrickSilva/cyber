@@ -16,10 +16,10 @@ const Home = () => {
             detect and nullify every possible vulnerability.
           </p>
         </div>
-      <button className="group bg-gradient-to-r bg-primary hover:bg-red-700 transition duration-300 ease-out cursor-pointer mt-7  text-white py-3 px-6 rounded-md flex items-center justify-center gap-1">
+      <a href="#service" className="w-fit group bg-gradient-to-r bg-primary hover:bg-red-700 transition duration-300 ease-out cursor-pointer mt-7  text-white py-3 px-6 rounded-md flex items-center justify-center gap-1">
         <span>View Services</span>
         <MoveRight className="group-hover:translate-x-1.5 transition duration-300 ease-out"/>
-        </button>
+        </a>
       </div>
     </div>
   );
