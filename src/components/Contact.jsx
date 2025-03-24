@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useForm, ValidationError } from "@formspree/react";
+import toast, { Toaster } from "react-hot-toast";
 
 const Contact = () => {
   const key = import.meta.env.VITE_FORM_KEY;
   const [state, handleSubmit] = useForm(key || "");
 
   // Controlled form state
-  const [formData, setFormData] = useState({ email: "", message: "" });
+  const [formData, setFormData] = useState({ firstName: "", lastName: "", email: "", message: "" });
 
   // Handle input changes
   const handleChange = (e) => {
@@ -16,12 +17,17 @@ const Contact = () => {
   // Watch for successful submission and reset form
   useEffect(() => {
     if (state.succeeded) {
-      setFormData({ email: "", message: "" });
+      toast.success("Message sent successfully!");
+      setFormData({ firstName: "", lastName: "", email: "", message: "" });
+    } else if (state.errors?.length > 0 || state.errors) {
+      toast.error("Something went wrong! Please try again.");
     }
-  }, [state.succeeded]);
+  }, [state.succeeded, state.errors]);
 
   return (
     <div id="contact" className="min-h-[100vh] flex flex-col justify-center items-center">
+      <Toaster position="bottom-right" />
+
       <div className="relative">
         <h1 className="mt-10 text-center font-exo font-bold text-4xl before:content-[''] before:h-1.5 before:w-24 before:rounded-full before:left-[25%] before:absolute before:bg-primary before:-bottom-6">
           Contact Us<span className="text-6xl text-primary"> .</span>
@@ -30,10 +36,38 @@ const Contact = () => {
 
       <form
         onSubmit={handleSubmit}
-        className="mt-28 flex px-6 w-full sm:w-[450px] mx-auto flex-col gap-4"
+        className="my-20 flex px-6 w-full sm:w-[450px] mx-auto flex-col gap-4"
       >
         <div className="flex flex-col gap-1">
-          <label htmlFor="email" className="font-medium">Your email</label>
+          <label htmlFor="firstName" className="font-medium">First name</label>
+          <input
+            id="firstName"
+            type="text"
+            name="firstName"
+            value={formData.firstName}
+            onChange={handleChange}
+            placeholder="Jack"
+            className="w-full rounded-md border-2 border-primary bg-slate-900 dark:bg-slate-200 p-2 outline-primary"
+            required
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="lastName" className="font-medium">Last name</label>
+          <input
+            id="lastName"
+            type="text"
+            name="lastName"
+            value={formData.lastName}
+            onChange={handleChange}
+            placeholder="Doe"
+            className="w-full rounded-md border-2 border-primary bg-slate-900 dark:bg-slate-200 p-2 outline-primary"
+            required
+          />
+        </div>
+
+        <div className="flex flex-col gap-1">
+          <label htmlFor="email" className="font-medium">Email</label>
           <input
             id="email"
             type="email"
@@ -64,7 +98,7 @@ const Contact = () => {
 
         <button
           disabled={state.submitting}
-          className="mt-2 w-full rounded-md bg-primary p-2 transition duration-300 ease-out hover:bg-red-700 dark:text-slate-100"
+          className="mt-2 w-full rounded-md bg-primary p-2 transition duration-300 ease-out hover:bg-red-700 dark:text-slate-100 cursor-pointer"
         >
           {state.submitting ? <span className="loader"></span> : "Send Message"}
         </button>
